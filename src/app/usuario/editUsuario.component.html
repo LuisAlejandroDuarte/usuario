@@ -1,0 +1,80 @@
+<app-alerta [dataAlerta]="mensaje" (boton1)="onClicBoton1($event)"></app-alerta>
+<div class="container" >
+    <div class="row" style="margin:3%">
+        <div class="col">
+            <div class="card">
+            <div class="card-header">
+                USUARIO
+            </div>
+                <div class="card-body">                  
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Identificación</label>
+                                <input class="form-control form-control-sm"  [(ngModel)]="use_iden" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Nombres</label>
+                                <input class="form-control form-control-sm"  [(ngModel)]="use_nomb" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Apellidos</label>
+                                <input class="form-control form-control-sm"  [(ngModel)]="use_apel" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input class="form-control form-control-sm"  [(ngModel)]="use_emai" />
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Teléfono</label>
+                                    <input class="form-control form-control-sm"  [(ngModel)]="use_tele" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Usuario</label>                                    
+                                    <div class="input-group mb-3">                                            
+                                        <input type="text" class="form-control form-control-sm" [(ngModel)]="use_usua"  
+                                         aria-label="Username" aria-describedby="basic-addon1">
+                                        <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="fas fa-user-lock" style="cursor: pointer"></i>
+                                                </span>
+                                              </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                        <label>Tipo Usuario</label>
+                                        <select class="form-control form-control-sm" [(ngModel)]="selTipoUsuario">
+                                          <option [value]="-1">Seleccione ...</option>
+                                          <option *ngFor="let tipo of listTipoUsuario" [value]="tipo.CODI">
+                                             {{tipo.NOMB}}
+                                          </option>
+                                        </select>
+                                </div>
+                            </div>
+                            
+                        </div>                    
+                </div>    
+                <div class="card-footer text-muted text-right">
+                        <button type="button" class="btn btn-outline-primary btn-sm" (click)="onGuardar()">Guardar</button>
+                        &nbsp;&nbsp;
+                        <button type="button" class="btn btn-outline-danger btn-sm" (click)="onSalir()">Salir</button>
+                      </div>                    
+            </div>
+        </div>
+    </div>
+</div>
+        

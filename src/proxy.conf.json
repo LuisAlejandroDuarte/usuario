@@ -1,0 +1,6 @@
+{
+    "/usuario/src/service/": {
+      "target": "http://localhost:8037",
+      "secure": false
+    }
+}

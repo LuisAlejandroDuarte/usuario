@@ -1,0 +1,16 @@
+
+<app-alerta [dataAlerta]="mensaje" (boton1)="onClicBoton1($event)"></app-alerta>
+<div style="width: 100%;max-width: 330px;margin: auto;padding-top: 25px;margin-top:3%">
+    <div style="text-align: center!important">    
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Investigadores</div>
+            <div class="card-body text-primary">              
+                <label>Usuario</label>
+                <input  [(ngModel)]="user" class="form-control" placeholder="Usuario" />
+                <label>Clave</label>
+                <input  [(ngModel)]="pass" type="password"  class="form-control" placeholder="Clave"  />                
+            </div> 
+            <button type="button" class="btn btn-primary" style="margin: 10px" (click)="onClickValidarUsuario($event)">Inicar</button>      
+        </div>   
+    </div>
+</div>

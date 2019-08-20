@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.imagewait
+{
+   position: fixed;   
+    z-index: 3000; 
+      height: 64px; 
+     width: 64px;       
+     left: 50%;   
+     top:50%;   
+}
+
+.showait
+{
+    opacity: .5;
+    position: fixed;   
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;       
+    background-color: #333;
+
+}
