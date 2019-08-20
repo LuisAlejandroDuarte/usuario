@@ -34,4 +34,6 @@ export class UsuarioService {
      setUsuario(usuario:Usuario) : Observable<Usuario>{                   
       return this.http.post<Usuario>(this.baseUrl + 'prUsuario.php',JSON.stringify(usuario), httpOptions);
     }  
+
+    
 }

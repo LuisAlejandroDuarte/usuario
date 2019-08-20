@@ -47,6 +47,25 @@
         
         echo $result;
     }
+
+    if ($Accion=="EDIT")
+    {
+        $SQL="UPDATE sgi_user SET " .
+            " USE_IDEN = '" . $data['use_iden'] . "'," .
+            " USE_NOMB = '" . $data['use_nomb'] . "'," .
+            " USE_APEL = '" . $data['use_apel'] . "'," .
+            " USE_EMAI = '" . $data['use_emai'] . "'," .
+            " USE_TELE = '" . $data['use_tele'] . "'," . 
+            " USE_USUA = '" . $data['use_usua'] . "'," .
+            " USE_COD_TIPO = " .  (int)$data['use_cod_tipo'] . "" .
+            " WHERE USE_CODI = " .  (int)$data['use_codi'];
+
+        $execute = new  DataBase();
+        $result= $execute->escalarSql($SQL);
+        
+        echo $result;
+    }
+
     
 
  ?>

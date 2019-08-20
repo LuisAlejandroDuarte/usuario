@@ -122,17 +122,38 @@ export class EditUsuarioComponent {
         usuariio.use_cod_tipo = this.selTipoUsuario;
         usuariio.accion="ADD";
         usuariio.use_cvlac="";
-        this.serviceUsuario.setUsuario(usuariio).subscribe(res=>{
-
-        },error=> {
+        $('#iconoEspera').show();
+        if (this.use_codi==0)
+        {
+            this.serviceUsuario.setUsuario(usuariio).subscribe(res=>{
               $('#iconoEspera').hide();
-              console.clear();
-              var errorComponent = new ErrorComponent();            
-              this.mensaje =errorComponent.GenerarMensaje(error);          
-              this.mensaje.nVentana="IdError";
-              this.alerta.onChangedMyId("IdError");                      
-              $('#IdError').show();  
-        });
+              this.route.navigate(["/editusuario/" + res]);               
+            },error=> {
+                  $('#iconoEspera').hide();
+                  console.clear();
+                  var errorComponent = new ErrorComponent();            
+                  this.mensaje =errorComponent.GenerarMensaje(error);          
+                  this.mensaje.nVentana="IdError";
+                  this.alerta.onChangedMyId("IdError");                      
+                  $('#IdError').show();  
+            });
+        }
+        else
+        {
+          usuariio.accion="EDIT";
+          usuariio.use_codi=this.use_codi;
+          this.serviceUsuario.setUsuario(usuariio).subscribe(res=>{
+            $('#iconoEspera').hide();
+          },error=> {
+                $('#iconoEspera').hide();
+                console.clear();
+                var errorComponent = new ErrorComponent();            
+                this.mensaje =errorComponent.GenerarMensaje(error);          
+                this.mensaje.nVentana="IdError";
+                this.alerta.onChangedMyId("IdError");                      
+                $('#IdError').show();  
+          });
+        }
     }
 }
 
